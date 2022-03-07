@@ -10,7 +10,7 @@
 
 .center_div {
   width: 25%;
-  height: 100vh;
+  min-height: 100vh;
   background-color: azure;
   box-shadow: 5px 5px 25px -5px;
   border-radius: 15px;
@@ -36,4 +36,12 @@ ol>div{
 .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root{
   max-height: 38px;
     margin-top: 2px;
+}
+
+.delete_all {
+  margin-right: 50px;
+  background-color: red;
+  float: right;
+  margin-right: 0;
+  color: #f5f5f5
 }

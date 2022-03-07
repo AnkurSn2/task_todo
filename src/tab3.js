@@ -33,16 +33,17 @@ const Tab3 = () => {
             <ol>
                 {lItems.length > 0 && lItems.map((itemVal, index) => {
                     return <div key={index}>
-                        <span style={{ textDecoration: itemVal.status === 2 ? "line-through" : "none" }}>
-                            {itemVal.status === 2 && itemVal.item}
-                            <div style={{ marginInlineStart: "275px", display: "flex", justifyContent: "left" }}>
+                        <div style={{ textDecoration: itemVal.status === 2 ? "line-through" : "none",width:"100%", display:"flex", alignItems:"center",  justifyContent: "left" }}>
+                            <h3 style={{margin:"0 auto", marginLeft:"0"}}>{itemVal.status === 2 && itemVal.item}</h3>
+                            <div style={{ marginInlineStart: "275px", display: "flex", justifyContent: "center" }}>
                                 <DeleteOutlineTwoToneIcon onClick={() => deleteItems(index)} /></div>
-                        </span></div>
+                        </div>
+                        </div>
                 })}
             </ol>
             <Button onClick={deleteAll} startIcon={<DeleteIcon />} style={{
                 marginRight: "50px", backgroundColor: "red", float: "right",
-                marginRight: "0"
+                marginRight: "0", color: "#f5f5f5" 
             }}>
                 Delete all
             </Button>
