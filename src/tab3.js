@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const Tab3 = () => {
+    // state for getting data from local storage
     const [lItems, setLocalItems] = useState([]);
 
     useEffect(() => {
@@ -14,6 +15,7 @@ const Tab3 = () => {
         // gettingData();
     }, [localStorage.getItem("lists")]);
 
+//delete item one by one
     const deleteItems = (id) => {
         const updatedItems = lItems.filter((itemVal, index) => {
             return index !== id;
@@ -21,18 +23,13 @@ const Tab3 = () => {
         setLocalItems(updatedItems);
     }
 
+//delete all items
     const deleteAll = () => {
         setLocalItems([]);
     }
 
     return (
         <>
-            <Button onClick={deleteAll} startIcon={<DeleteIcon />} style={{
-                marginRight: "50px", backgroundColor: "red", float: "right",
-                marginRight: "0"
-            }}>
-                Delete all
-            </Button>
             <ol>
                 {lItems.length > 0 && lItems.map((itemVal, index) => {
                     return <div key={index}>
@@ -43,6 +40,12 @@ const Tab3 = () => {
                         </span></div>
                 })}
             </ol>
+            <Button onClick={deleteAll} startIcon={<DeleteIcon />} style={{
+                marginRight: "50px", backgroundColor: "red", float: "right",
+                marginRight: "0"
+            }}>
+                Delete all
+            </Button>
         </>
     )
 }
