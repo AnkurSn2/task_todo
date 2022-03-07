@@ -5,6 +5,7 @@ import Tab from '@mui/material/Tab';
 import Tab1 from './tab1';
 import Tab2 from './tab2';
 import Tab3 from './tab3';
+import Footer from './footer';
 
 function App() {
   const [value, setValue] = useState(0);
@@ -37,6 +38,7 @@ function App() {
           <TabPanel value={value} index={0}><Tab1 /></TabPanel>
           <TabPanel value={value} index={1}><Tab2 /></TabPanel>
           <TabPanel value={value} index={2}><Tab3 /></TabPanel>
+          <Footer />
         </div>
       </div>
     </>
